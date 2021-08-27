@@ -1,0 +1,275 @@
+.roundButton{
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    border: 3px solid #888888;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+    box-shadow: 2px 2px #ccc;
+    cursor: pointer;
+}
+#turnOffFocus{
+    transform: translateY(-4px) translateX(2px);
+    /* transform: translateX(4px); */
+}
+#addTask{
+    padding: 10px;
+    margin-left: 20px;
+    color: #2196F3;
+    font-size: 14px;
+    cursor: pointer;
+    width: 80px;
+    font-size: 16px;
+    height: 15px;
+}
+#adTaskButton{
+    /* transform: translateY(-20px);
+    transform: translateX(200px); */
+    /* float: right; */
+    position: relative;
+    top: -20px;
+    right: -200px;
+    border: none;
+    border-radius: 50%;
+    background-color: grey;
+    color: white;
+    cursor: pointer;
+    visibility: hidden;
+
+}
+#addTaskInput{
+    outline: 0;
+    border-width: 0 0 2px;
+    border-color: rgba(0, 0, 0, 0.616);
+    /* margin-left: 20px; */
+    font-size: 14px;
+    transform: translateY(-37px);
+    background-color: transparent;
+    padding-left: 13px;
+    font-size: 16px;
+    color: #6a1be9;
+    visibility: hidden;
+}
+#addTaskInput:focus{
+    border-color: rgba(0, 0, 0, 0.438);
+}
+.nextTasks{
+    padding-left: 30px;
+}
+.nextTasks:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+#currentTask{
+    padding-left: 0px;
+    /* display: inline; */
+    /*  */
+    background-color: red;
+  
+    /* Create the gradient. */
+    background-image: linear-gradient(135deg, #6a1be9, #ff058a);
+    
+    /* Set the background size and repeat properties. */
+    background-size: 100%;
+    background-repeat: repeat;
+  
+    /* Use the text as a mask for the background. */
+    /* This will show the gradient as a text color rather than element bg. */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+    /*  */
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 35px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    width: fit-content;
+    transition: 1s;
+    
+}
+
+#topTask{
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+body{
+    font-family: Helvetica,-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: white;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    max-width: 800px;
+    min-width: 450px;
+}
+
+#BlockWarning{
+    background-color: rgba(219, 99, 99, 0.342);
+    color: red;
+    padding: 10px 25px;
+    margin: 8px 0;
+    text-align: center;
+    border-radius: 5px;
+}
+#WDText{
+    background-color: rgba(136, 221, 136, 0.356);
+    color: green;
+    padding: 10px 25px;
+    margin: 8px 0;
+    text-align: center;
+    border-radius: 5px;
+}
+#topFinishedJobs{
+    border: 1px solid rgb(189, 41, 241);
+    padding: 10px 10px;
+    border-radius: 10px;
+}
+#topFinishedJobs li{
+    color:rgb(112, 22, 144) ;
+}
+#WDText span{
+    font-size: 17px;
+}
+#nextTasksList{
+    border: 1px solid rgb(141, 17, 120);
+    padding: 10px 10px;
+    border-radius: 10px;
+    color:rgb(141, 17, 120) ;
+    font-size: 16px;
+}
+#delDoneTasks{
+    border: none;
+    background-color: grey;
+    color: white;
+    cursor: pointer;
+    padding: 3px 5px;
+    border-radius: 15px;
+    display: none;
+}
+#doneTasksList{
+    border: 1px solid rgb(141, 17, 120);
+    padding: 10px 10px;
+    border-radius: 10px;
+}
+
+#doneTasksItems{
+    color:rgb(141, 17, 120) ;
+    font-size: 16px;
+
+}
+li{
+    list-style: none;
+    padding: 2.5px 0 2.5px 20px;
+}
+
+#title{
+    padding-left: 0px;
+    /* display: inline; */
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 35px;
+    margin-bottom: 15px;
+
+}
+.focusToggle{
+    padding: 6px 0 6px 0;
+    position: relative;
+    top: -15px;
+    
+}
+#focusText{
+    color: #2196F3;
+    position: relative;
+    top: 14px;
+    font-size: 31px;
+    padding: 6px 10px 6px 0px;
+    margin-right: 10px;
+}
+
+.prefButton{
+    float: right;
+    border: none;
+    background: none;
+    padding: 0;
+    transform: translateX(40px);
+}
+#prefText{
+    font-size: 10px;
+    display: inline;
+    position: relative;
+    top: 12px;
+    right: 42px;
+
+    
+}
+#prefImage{
+    height: 25px;
+    cursor: pointer;
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+
+  }
+  
+  /* input:checked + .slider {
+    background-color: #2196F3;
+  } */
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider::before {
+
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+  }
+  #roundBall{
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+  }

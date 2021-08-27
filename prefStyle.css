@@ -1,0 +1,103 @@
+#blockedSites{
+
+    color: red;
+
+}
+input{
+    border: none;
+    border-bottom: 2px solid #aaa;
+    border-left: 2px solid #aaa;
+    outline: none;
+    border-radius: 5px;
+}
+input:focus{
+    border: none;
+    transition: 2s;
+    border-bottom: 2px solid #2196F3;
+    border-left: 2px solid #2196F3;
+
+}
+button{
+    border: none;
+}
+#clearWebs{
+    background-color: rgb(143, 143, 143);
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 20px 10px 0 10px;
+    padding: 6px 10px 6px 10px;
+    font-size: 17px;
+    font-weight: 100;
+    width: fit-content;
+    color: white;
+    cursor: pointer;
+}
+.RemoveButton{
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: red;
+}
+#siteNameIP{
+    width: 50%;
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 100;
+    padding: 5px 0 5px 20px;
+    margin-right: 12px;
+}
+#newSiteIP{
+    display: block;
+    width: 97%;
+    font-size: 18px;
+    padding: 5px 0 5px 20px;
+}
+#addSiteButton{
+    margin: 10px 16px 0 0;
+    padding: 6px 10px 6px 10px;
+    font-size: 17px;
+    font-weight: 100;
+    background-color: #2196F3;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+}
+.webButton{
+    margin: 20px 10px 0 10px;
+    padding: 6px 10px 6px 10px;
+    font-size: 17px;
+    font-weight: 100;
+    width: fit-content;
+    border: none;
+    background-color: rgb(175, 7, 7);
+    color: white;
+    cursor: pointer;
+    border-radius: 6px;
+    
+
+}
+
+.webButtonNew{
+    margin: 20px 10px 0 10px;
+    padding: 6px 10px 6px 10px;
+    font-size: 17px;
+    font-weight: 100;
+    width: fit-content;
+    border: none;
+    background-color: rgba(240, 34, 34, 0.822);
+    color: white;
+    cursor: pointer;
+    border-radius: 6px;
+
+
+}
+
+#body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+#blockingText{
+    font-family: Arial, Helvetica, sans-serif;
+}
+#blockedSites{
+    margin-top: 30px;
+}

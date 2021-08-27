@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus ToDo</title>
+</head>
+<link rel="stylesheet" href="popupStyle.css">
+
+<body>
+    <div class="topTitle">
+        <a href="preferences.html" style="text-decoration: none;" target="_blank">
+            <button class="prefButton"><img src="preferences.png" id="prefImage" alt="">
+        </a>
+        <div id="prefText">Preferences</div>
+        </button>
+
+        <h2 id="title">
+            Focus Mode
+        </h2>
+        <h2 id="currentTask">
+            <span id="currentlyShowing">Focus On</span>
+            <button class="roundButton" id="turnOffFocus"></button>
+        </h2>
+    </div>
+
+    <div class="focusToggle">
+        <span id="focusText">
+            Focus Mode
+        </span>
+        <label class="switch" id="focusButton">
+            <input type="button" id="checkbox">
+            <span class="slider round" id="sliderOut">
+                <span id="roundBall"></span>
+            </span>
+        </label>
+    </div>
+    <div id="whenBlocking">
+        <p id="BlockWarning">
+            Sorry you can't access this website.
+            <br>
+            You haven't finished your tasks for now.
+        </p>
+    </div>
+
+    <div id="workDone">
+        <p id="WDText">
+            Yay! you have finished these jobs...
+            <br>
+                lets do more.
+        </p>
+    </div>
+    <div id="nextTasks">
+        <ul id="nextTasksList">
+            <div id="nextTasksDiv">
+                <li class="nextTasks" id="nextTasksItems" style="font-size: 12px; color:grey;" >
+                    Your Next Tasks go here 
+                </li>
+            </div>
+            <li id="addTask">
+                <span id="addTaskText">+ Add Task</span>
+                <button id="adTaskButton">Add</button>
+                <input placeholder="Add Task" type="text" name="Add Task" id="addTaskInput">
+            </li>
+        </ul>
+    </div>
+
+    <div id="doneTasks">
+        <ul id="doneTasksList">
+            <li id="doneTasksItems" style="font-size: 12px; color:grey;">
+                Your Done Tasks go here
+            </li>
+        </ul>
+        <button id="delDoneTasks">Clear done Tasks</button>
+    </div>
+
+</body>
+<script src="popupJS.js"></script>
+
+</html>
