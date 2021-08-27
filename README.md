@@ -1,2 +1,2 @@
 # Focus-ToDo
-A chrome Extension that block junk websites and more
+A chrome extension that blocks distracting websites while you focus and lets you add your tasks in and complete them one by one
