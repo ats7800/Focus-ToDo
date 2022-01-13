@@ -101,3 +101,15 @@ button{
 #blockedSites{
     margin-top: 30px;
 }
+.blockSitetrue:hover{
+    transition: 1s;
+    background-color: green;
+}
+.blockSitefalse:hover{
+    transition: 1s;
+    text-decoration: none;
+}
+.blockSitefalse{
+    text-decoration: line-through;
+    background-color: grey;
+}

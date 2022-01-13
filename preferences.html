@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,24 +8,23 @@
     <title>Preferences</title>
     <link rel="stylesheet" href="prefStyle.css">
 </head>
+
 <body>
     <div id="inputArea">
-        <input placeholder="Enter Base URL" type="text" name="newSite" id="newSiteIP" style="font-size: 14px; font-weight: 100;">
-        <input placeholder="Name Of the Website" type="text" name="siteName" id="siteNameIP" style="font-size: 14px; font-weight: 100;">
+        <input placeholder="Enter Base URL" type="text" name="newSite" id="newSiteIP"
+            style="font-size: 14px; font-weight: 100;">
+        <input placeholder="Name Of the Website" type="text" name="siteName" id="siteNameIP"
+            style="font-size: 14px; font-weight: 100;">
         <button id="addSiteButton">Add Site</button>
     </div>
     <div id="blockedSites">
         <p id="blockingText">
             Websites that are being blocked
         </p>
-        <button class="webButton" id="insta"> Instagram </button>
-        <button class="webButton" id="faceBook">FaceBook</button>
-        <button class="webButton" id="youtube">YouTube</button>
-        <button class="webButton" id="twitter">Twitter</button>
-        <button class="webButton" id="netflix">NetFlix</button>
-        <button class="clearButton" id="clearWebs">Clear Sites</button>
         <div id="webButtonsDiv"></div>
+        <button class="clearButton" id="clearWebs">Clear Sites</button>
     </div>
     <script src="prefJS.js"></script>
 </body>
+
 </html>
