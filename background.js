@@ -17,14 +17,41 @@ function parseTransferData(stringLink) {
         toBlock:false
     }
 // parsing defalut blocked websites and newly added ones each time request is made
-    if (localStorage.getItem("blockedSitesLink")) {
-        blockedSitesLink = JSON.parse(localStorage.getItem("blockedSitesLink"))
-    } else {
-        blockedSitesLink = ["www.youtube.com", "www.facebook.com", "twitter.com", "www.netflix.com", "www.instagram.com"]
-    }
+    // if (localStorage.getItem("sites")) {
+        // sites = JSON.parse(localStorage.getItem("sites"))
+    // } else {
+        // sites={
+        //     FaceBook:{
+        //         block:true,
+        //         url:"www.facebook.com",
+        //         default:true
+        //     },
+        //     YouTube:{
+        //         block:true,
+        //         url:"www.youtube.com",
+        //         default:true
+        //     },
+        //     Instagram:{
+        //         block:true,
+        //         default:true,
+        //         url:"www.instagram.com"
+        //     },
+        //     Twitter:{
+        //         block:true,
+        //         default:true,
+        //         url:"twitter.com"
+        //     },
+        //     NetFlix:{
+        //         block:true,
+        //         default:true,
+        //         url:"www.netflix.com"
+        //     }
+        // }
+    // }
 
+    let sites = JSON.parse(localStorage.getItem("sites"))
     let focusStatusVar=focusStatus()
-    let blockAbleURL=containsString(stringLink, blockedSitesLink)
+    let blockAbleURL=containsString(stringLink, sites)
 
     if(blockAbleURL){
         sendAbleData.toBlock=focusStatusVar
@@ -44,13 +71,16 @@ function focusStatus(){
 }
 
 // check if sent url contains blocked sites' url
-function containsString(string, arrOString) {
-    for (let i = 0; i < arrOString.length; i++) {
-        const elem = arrOString[i];
-        if(string.indexOf(elem)!=-1){
-            return true
+
+function containsString(stringLink,siteObject){
+    for(elem of Object.keys(siteObject)){
+        if(stringLink.indexOf(siteObject[elem]['url'])<12&&stringLink.indexOf(siteObject[elem]['url'])>-1){
+            if(siteObject[elem]['block']){
+                return true
+            }else return false
         }
     }
     return false
 }
+
 console.log("no error");

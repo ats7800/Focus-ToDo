@@ -1,4 +1,7 @@
-let currentTaskText=""
+let currentTaskText="Focus On"
+if(localStorage.getItem("currentTaskText")){
+    currentTaskText=JSON.parse(localStorage.getItem("currentTaskText"))
+}
 
 if(localStorage.getItem("checkboxChecked")){
     checkboxChecked=JSON.parse(localStorage.getItem("checkboxChecked"))
@@ -58,6 +61,7 @@ addTaskText.addEventListener("click",function(){
 adTaskButton.addEventListener("click", function(){
     parseValue()
 })
+
 roundBall.addEventListener("click", function(){
     if((checkboxChecked==false)){
         checkboxChecked=true
@@ -79,17 +83,19 @@ function turnFocusOff() {
     focusOff()
     localStorage.setItem("checkboxChecked",checkboxChecked)
     if(n>0){
-        if(currentTaskText!=""){
+        if(currentTaskText!="Focus On"){
             doneTasksArr.unshift(currentTaskText)
         }
         localStorage.setItem("doneTasksArr",JSON.stringify(doneTasksArr))
         oneTime=true
     }else if(n==0&&oneTime==true){
-        if(currentTaskText!=""){
+        if(currentTaskText!="Focus On"){
             doneTasksArr.unshift(currentTaskText)
         }
         localStorage.setItem("doneTasksArr",JSON.stringify(doneTasksArr))
         oneTime=false
+        currentTaskText="Focus On"
+        localStorage.setItem("currentTaskText",JSON.stringify(currentTaskText))
     }
     renderDoneTasks(doneTasksArr)
     greeings()
@@ -121,6 +127,7 @@ function focusOn(){
     title.style.display="none"
     roundBall.style.transform="translateX(26px)"
     document.getElementById("sliderOut").style.backgroundColor="#2196F3"
+    renderCurrentTask(currentTaskText)
 }
 
 // adding task in nex tasks
@@ -200,7 +207,8 @@ function fetchNextTask(){
             renderNextTasks(nextTasks)
         }
     }else{
-        currentlyShowing.textContent="Focus On"
+        currentTaskText="Focus On"
+        renderCurrentTask(currentTaskText)
     }
 }
 
@@ -216,6 +224,9 @@ function greeings() {
         Lets Do More.
         `
     }
+}
+function renderCurrentTask(currentTaskText){
+    currentlyShowing.textContent=currentTaskText
 }
 
 // to get element by id and create the same js element

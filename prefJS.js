@@ -3,91 +3,136 @@ elemId(siteNameIP)
 elemId(addSiteButton)
 elemId(blockedSites)
 elemId(webButtonsDiv)
-elemId(insta)
-elemId(faceBook)
-elemId(youtube)
-elemId(twitter)
-elemId(netflix)
 elemId(clearWebs)
-console.log("good till now ext");
 
+if (localStorage.getItem("sites")) {
 
-if(localStorage.getItem("blockedSitesNames")){
-    blockedSitesNames=JSON.parse(localStorage.getItem("blockedSitesNames"))
-    blockedSitesLink=JSON.parse(localStorage.getItem("blockedSitesLink"))
-    renderSiteButtons(blockedSitesNames)
-}else{
-    blockedSitesNames=[]
-    blockedSitesLink=["www.youtube.com","www.facebook.com","twitter.com","www.netflix.com","www.instagram.com"]
+    sites = JSON.parse(localStorage.getItem("sites"))
+    renderSiteButtons(sites)
+} else {
+    sites = {
+        FaceBook: {
+            block: true,
+            url: "www.facebook.com",
+            default: true
+        },
+        YouTube: {
+            block: true,
+            url: "www.youtube.com",
+            default: true
+        },
+        Instagram: {
+            block: true,
+            default: true,
+            url: "www.instagram.com"
+        },
+        Twitter: {
+            block: true,
+            default: true,
+            url: "twitter.com"
+        },
+        NetFlix: {
+            block: true,
+            default: true,
+            url: "www.netflix.com"
+        }
+    }
+    renderSiteButtons(sites)
 }
 
 
-
-// function disable(idOfElem){
-// let tempElem=document.getElementById(idOfElem)
-// tempElem.style.backgroundColor="rgb(216, 103, 103)"
-// }
-// function remove(idOfElem){
-//     let tempElem=document.getElementById(idOfElem)
-
-// }
-
-addSiteButton.addEventListener("click",function(){
+addSiteButton.addEventListener("click", function () {
     addNewSite()
 })
 
-clearWebs.addEventListener("click",function(){
+clearWebs.addEventListener("click", function () {
     clearSites()
 })
 
-console.log("hi");
 
-function addNewSite(){
-    if(newSiteIP.value==""||siteNameIP.value==""){
+function addNewSite() {
+    if (newSiteIP.value == "" || siteNameIP.value == "") {
         alert("invalid!!!")
-    } else {        
-        blockedSitesNames.push(siteNameIP.value)
-        blockedSitesLink.push(newSiteIP.value)
+    } else {
+        sites[siteNameIP.value] = {
+            block: true,
+            url: newSiteIP.value
+        }
 
-        localStorage.setItem("blockedSitesNames",JSON.stringify(blockedSitesNames))
-        localStorage.setItem("blockedSitesLink",JSON.stringify(blockedSitesLink))
+        localStorage.setItem("sites", JSON.stringify(sites))
 
-        renderSiteButtons(blockedSitesNames)
-        newSiteIP.value=""
-        siteNameIP.value=""
+        renderSiteButtons(sites)
+        newSiteIP.value = ""
+        siteNameIP.value = ""
     }
 }
 
 function clearSites() {
-    blockedSitesNames=[]
-    blockedSitesLink = ["www.youtube.com", "www.facebook.com", "twitter.com", "www.netflix.com", "www.instagram.com"]
-    renderSiteButtons(blockedSitesNames)
-    localStorage.setItem("blockedSitesNames",JSON.stringify(blockedSitesNames))
-    localStorage.setItem("blockedSitesLink",JSON.stringify(blockedSitesLink))    
+    sites = {
+        FaceBook: {
+            block: true,
+            url: "www.facebook.com",
+            default: true
+        },
+        YouTube: {
+            block: true,
+            url: "www.youtube.com",
+            default: true
+        },
+        Instagram: {
+            block: true,
+            default: true,
+            url: "www.instagram.com"
+        },
+        Twitter: {
+            block: true,
+            default: true,
+            url: "twitter.com"
+        },
+        NetFlix: {
+            block: true,
+            default: true,
+            url: "www.netflix.com"
+        }
+    }
+
+    renderSiteButtons(sites)
+    localStorage.setItem("sites", JSON.stringify(sites))
 }
 
-function renderSiteButtons(arr){
-    webButtonsDiv.innerHTML=""
-    arr.forEach(elem => {
-        let butt=`
-        <button class="webButtonNew" id="${elem}"> ${elem}
-        </button>
-        `
-        webButtonsDiv.innerHTML+=butt
-    });
+
+function renderSiteButtons(siteObject) {
+    webButtonsDiv.innerHTML = ""
+    for (elem of Object.keys(siteObject)) {
+        let elementID=siteObject[elem]["url"]
+        // console.log(elementID);
+        let butt = `
+                <button class="webButton${siteObject[elem]["default"] ? '' : 'New'}  blockSite${siteObject[elem]["block"]} siteBtns" id="${elementID}"> ${elem}
+                </button>
+                `
+        webButtonsDiv.innerHTML += butt
+
+    }
+    
+    Array.from(document.getElementsByClassName('siteBtns')).map(l1=>l1.addEventListener('click', function(){
+        toggleBlocking(this.id)
+    }))
 }
 
 
+function toggleBlocking(id) {
+    let siteName = ''
+    for (key of Object.keys(sites)) {
+        if (sites[key]["url"] == id) {
+            siteName = key
+            break
+        }
+    }
+    sites[siteName]['block'] = !sites[siteName]['block']
+    localStorage.setItem("sites", JSON.stringify(sites))
+    renderSiteButtons(sites)
+}
 
-
-
-
-
-
-
-
-
-
-function elemId(id){
-    id=document.getElementById(id)
+function elemId(id) {
+    id = document.getElementById(id)
 }
