@@ -1,0 +1,20 @@
+{
+  "type": "module",
+  "name": "focus-todo",
+  "version": "1.0.0",
+  "description": "A chrome extension that blocks distracting websites while you focus and lets you add your tasks in and complete them one by one ## V2 update giving abiltiy to switch each web button on/off",
+  "main": "background.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ats7800/Focus-ToDo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ats7800/Focus-ToDo/issues"
+  },
+  "homepage": "https://github.com/ats7800/Focus-ToDo#readme"
+}
